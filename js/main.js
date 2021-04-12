@@ -20,7 +20,7 @@ while(numeri.length < quantità) {
     if(!numeri.includes(numero)) {
         numeri.push(numero);
     }  
-};
+}
 
 //  Numeri che l'utente deve ricordare
 alert("Memorizza i seguenti numeri: " + numeri);
@@ -32,10 +32,10 @@ setTimeout(function(){
         
         //Validazione
         while(numeroInserito < 0 || numeroInserito > 100 || isNaN(numeroInserito)) {
-            var numeroInserito = parseInt( prompt("Valore non valido.\nInserisci il numero " + (numeriUtente.length + 1) + " di " + quantità) );
+            var numeroInserito = parseInt( prompt("Valore non valido! Inserisci il numero " + (numeriUtente.length + 1) + " di " + quantità) );
         }
         while(numeriUtente.includes(numeroInserito)) {
-            var numeroInserito = parseInt( prompt("Numero già inserito.\nInserisci il numero " + (numeriUtente.length + 1) + " di " + quantità) );
+            var numeroInserito = parseInt( prompt("Numero già inserito! Inserisci il numero " + (numeriUtente.length + 1) + " di " + quantità) );
         }
 
         numeriUtente.push(numeroInserito);
@@ -49,16 +49,20 @@ setTimeout(function(){
         }   
     }
 
-    //Output
+    // Output
     console.log("Hai indovinato " + riscontro.length + " numeri su " + numeri.length);
     console.log("I numeri indovinati sono: " + riscontro);
+
+
 }, 30000);
 
 
 
-/**
-* FUNCIONS
-*/
+/*************************
+    FUNCTION UTILITIES
+*************************/
+
+// Generatore numeri random da 1 a 100
 
 function randNumb (min, max) {
     return Math.floor( Math.random() * (max - min) + min ) + 1;
